@@ -1,0 +1,8 @@
+按行合并文件
+前提：文件行数相同
+
+方法一：$ paste -d “\t” file_1 file_2 file_3 … > new_file
+
+方法二：$ awk ‘NR==FNR{a[NR]=$0;nr=NR;}NR>FNR{print a[NR-nr]”\t”$0}’ file_1 file_2
+
+方法三：$ awk ‘{getline f2 < “file_2”; print $0″\t”f2}’ file_1
