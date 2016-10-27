@@ -1,0 +1,8 @@
+例如：file1.txt文件，cat替换成dog
+
+1. 文件内
+:g/cat/s//dog/g
+
+2. 文件外
+
+sed -i “s/cat/dog/g” file1.txt
