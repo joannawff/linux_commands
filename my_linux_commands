@@ -17,6 +17,6 @@ sed -i “s/cat/dog/g” file1.txt
 方法三：$ awk ‘{getline f2 < “file_2”; print $0″\t”f2}’ file_1
 
 【vim文件间复制】
-如a文件复制10-20行到b文件中
+如a文件复制n1-n2行到b文件中
 a文件里输入：n1,n2 w!/tmp/x1
 b文件里光标移到粘贴的位置后，输入：r /tmp/x1 
