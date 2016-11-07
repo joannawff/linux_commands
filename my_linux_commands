@@ -1,4 +1,4 @@
-一、替换字符串
+【替换字符串】
 例如：file1.txt文件，cat替换成dog
 
 1. 文件内
@@ -7,7 +7,7 @@
 2. 文件外
 sed -i “s/cat/dog/g” file1.txt
 
-二、按行合并文件
+【按行合并文件】
 前提：文件行数相同
 
 方法一：$ paste -d “\t” file_1 file_2 file_3 … > new_file
@@ -16,4 +16,7 @@ sed -i “s/cat/dog/g” file1.txt
 
 方法三：$ awk ‘{getline f2 < “file_2”; print $0″\t”f2}’ file_1
 
-
+【vim文件间复制】
+如a文件复制10-20行到b文件中
+a文件里输入：n1,n2 w!/tmp/x1
+b文件里光标移到粘贴的位置后，输入：r /tmp/x1 
