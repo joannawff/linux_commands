@@ -20,3 +20,10 @@ sed -i “s/cat/dog/g” file1.txt
 如a文件复制n1-n2行到b文件中
 a文件里输入：n1,n2 w!/tmp/x1
 b文件里光标移到粘贴的位置后，输入：r /tmp/x1 
+
+【找到重复行】
+awk 'NR==FNR{a[$1]++}NR>FNR&&a[$1]>1' file file
+
+【查找进程PID】
+ps aux | grep "sh run.sh" | awk -F ' ' '{print $2}'
+
