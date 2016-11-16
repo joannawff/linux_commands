@@ -27,3 +27,9 @@ awk 'NR==FNR{a[$1]++}NR>FNR&&a[$1]>1' file file
 【查找进程PID】
 ps aux | grep "sh run.sh" | awk -F ' ' '{print $2}'
 
+【awk正则匹配字符】
+~ 关系操作符
+~ 匹配正则
+!~ 不匹配正则
+如：awk -F ' ' '{if($0!~/#/ ) {print $0}}' feature_slots.conf
+
