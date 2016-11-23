@@ -39,3 +39,6 @@ ps aux | grep "sh run.sh" | awk -F ' ' '{print $2}'
 
 【建立软链接】
 ln -s /home/work/filename filename
+
+【awk删除字符串前后空格，并过滤空行】
+cat file | awk '{sub("^ *","");sub("^ $");print}' | tr -s '\n' > new_file
