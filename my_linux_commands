@@ -33,3 +33,9 @@ ps aux | grep "sh run.sh" | awk -F ' ' '{print $2}'
 !~ 不匹配正则
 如：awk -F ' ' '{if($0!~/#/ ) {print $0}}' feature_slots.conf
 
+【压缩与解压】
+1. 压缩：tar -cvf file.tar.gz file
+2. 解压：tar -xvf file.tar.gz
+
+【建立软链接】
+ln -s /home/work/filename filename
