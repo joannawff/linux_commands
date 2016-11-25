@@ -42,3 +42,20 @@ ln -s /home/work/filename filename
 
 【awk删除字符串前后空格，并过滤空行】
 cat file | awk '{sub("^ *","");sub("^ $");print}' | tr -s '\n' > new_file
+
+【字符统计】
+%s/test/&/gn
+
+【后台运行】
+当有程序需要运行较长时间时，可以在脚本中用&设置后台作业，未完成则等待，否则继续下面的任务。
+python file.py &
+count=5
+while [[ $count>1 ]]; do
+    let count=0
+    sleep 3s
+    for s in `ps aux | grep "python" | awk -F ' ' {'print $2'}`
+    do
+        let count=$count+1
+    done
+done
+#next command
