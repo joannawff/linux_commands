@@ -39,6 +39,8 @@ ps aux | grep "sh run.sh" | awk -F ' ' '{print $2}'
 
 【建立软链接】
 ln -s /home/work/filename filename
+【删除软链接】
+rm -rf filename （注意如果是文件夹的话，只能是filename而不是filename/）
 
 【awk删除字符串前后空格，并过滤空行】
 cat file | awk '{sub("^ *","");sub("^ $");print}' | tr -s '\n' > new_file
