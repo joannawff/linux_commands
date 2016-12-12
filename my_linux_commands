@@ -61,3 +61,6 @@ while [[ $count>1 ]]; do
     done
 done
 #next command
+
+【杀死所有名为processname的进程】
+kill -9 `ps -ef| grep processname| awk '{print $2}'`
